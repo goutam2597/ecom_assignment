@@ -1,6 +1,6 @@
 import 'package:ecommerce_assignment/features/auth/ui/screens/login_screen.dart';
+import 'package:ecommerce_assignment/features/auth/ui/widgets/text_button_widget.dart';
 import 'package:flutter/material.dart';
-
 import '../../../../app/assets_path.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -8,6 +8,8 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16),
@@ -15,31 +17,29 @@ class WelcomeScreen extends StatelessWidget {
           child: Center(
             child: Column(
               children: [
-                SizedBox(height: 64),
+                const SizedBox(height: 64),
                 Image.asset(AssetsPath.wLogo, width: 80),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 Text(
                   'Welcome to your ultimate\nshopping experience!',
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                  style: textTheme.headlineMedium,
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 Text(
                   'Your stylish, smart shopping companion—made\nfor everyone, everywhere 🛍️',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.grey,
-                  ),
+                  style: textTheme.bodyLarge,
                 ),
-                SizedBox(height: 24),
-                Image.asset(AssetsPath.wFrame,width: double.infinity),
-                SizedBox(height: 32),
+                const SizedBox(height: 24),
+                Image.asset(AssetsPath.wFrame, width: double.infinity),
+                const SizedBox(height: 32),
                 ElevatedButton(
                   onPressed: () {},
-                  style: ElevatedButton.styleFrom(maximumSize: Size(184, 56)),
-                  child: Row(
+                  style: ElevatedButton.styleFrom(
+                    maximumSize: const Size(184, 56),
+                  ),
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('Get Started'),
@@ -48,17 +48,16 @@ class WelcomeScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: 32),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('Already have an account?'),
-                    TextButton(onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder:(context){
-                        return LoginScreen();
-                      }));
-                    }, child: Text('Sign In')),
-                  ],
+                const SizedBox(height: 32),
+                TextButtonWidget(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const LoginScreen()),
+                    );
+                  },
+                  buttonText: 'Sign In',
+                  labelText: 'Have an account?',
                 ),
               ],
             ),
