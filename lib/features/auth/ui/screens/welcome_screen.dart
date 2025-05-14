@@ -1,5 +1,6 @@
 import 'package:ecommerce_assignment/features/auth/ui/screens/login_screen.dart';
 import 'package:ecommerce_assignment/features/auth/ui/widgets/text_button_widget.dart';
+import 'package:ecommerce_assignment/features/common/ui/screens/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import '../../../../app/assets_path.dart';
 
@@ -35,7 +36,9 @@ class WelcomeScreen extends StatelessWidget {
                 Image.asset(AssetsPath.wFrame, width: double.infinity),
                 const SizedBox(height: 32),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder:(context)=>BottomNavBar()));
+                  },
                   style: ElevatedButton.styleFrom(
                     maximumSize: const Size(184, 56),
                   ),

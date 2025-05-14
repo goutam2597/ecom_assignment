@@ -5,6 +5,7 @@ class AppThemeData {
   static ThemeData lightTheme = ThemeData(
     colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
     scaffoldBackgroundColor: Colors.white,
+    fontFamily: 'Poppins',
 
     // AppBar Styling
     appBarTheme: AppBarTheme(
