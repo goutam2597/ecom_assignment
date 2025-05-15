@@ -1,4 +1,5 @@
 import 'package:ecommerce_assignment/app/assets_path.dart';
+import 'package:ecommerce_assignment/features/auth/ui/widgets/social_icon_widget.dart';
 import 'package:ecommerce_assignment/features/profile/ui/screens/settings_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -46,8 +47,14 @@ class UserProfileScreen extends StatelessWidget {
               SizedBox(height: 24),
               ProfileButtonWidget(
                 onPressed: () {},
-                iconLeft: FontAwesomeIcons.solidUser,
-                text: 'Profile',
+                iconLeft: FontAwesomeIcons.solidFile,
+                text: 'Orders',
+                text2: '',
+              ),
+              ProfileButtonWidget(
+                onPressed: () {},
+                iconLeft: FontAwesomeIcons.solidHeart,
+                text: 'Wishlist',
                 text2: '',
               ),
               ProfileButtonWidget(
@@ -72,17 +79,31 @@ class UserProfileScreen extends StatelessWidget {
               ),
               ProfileButtonWidget(
                 onPressed: () {},
-                iconLeft: FontAwesomeIcons.shareNodes,
-                text: 'Share App',
-                text2: '',
-              ),
-              ProfileButtonWidget(
-                onPressed: () {},
                 iconLeft: FontAwesomeIcons.solidCircleQuestion,
                 text: 'Help',
                 text2: '',
               ),
               Spacer(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SocialIconButton(
+                    onTap: () {},
+                    child: const Icon(FontAwesomeIcons.facebookF),
+                  ),
+                  const SizedBox(width: 4),
+                  SocialIconButton(
+                    onTap: () {},
+                    child: const Icon(FontAwesomeIcons.google),
+                  ),
+                  const SizedBox(width: 4),
+                  SocialIconButton(
+                    onTap: () {},
+                    child: const Icon(FontAwesomeIcons.linkedinIn),
+                  ),
+                ],
+              ),
+              const SizedBox(height:24),
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
