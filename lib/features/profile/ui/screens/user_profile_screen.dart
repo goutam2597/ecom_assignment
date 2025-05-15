@@ -54,7 +54,10 @@ class UserProfileScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => SettingsScreen(userProfile: userProfile,)),
+                    MaterialPageRoute(
+                      builder:
+                          (context) => SettingsScreen(userProfile: userProfile),
+                    ),
                   );
                 },
                 iconLeft: FontAwesomeIcons.gear,
@@ -80,7 +83,11 @@ class UserProfileScreen extends StatelessWidget {
                 text2: '',
               ),
               Spacer(),
-              ElevatedButton(onPressed: () {}, child: Text('Sign Out')),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                child: Text('Sign Out'),
+              ),
               SizedBox(height: 16),
             ],
           ),

@@ -26,44 +26,44 @@ class SettingsScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 8),
-            Card(
-              color: Colors.grey.shade100,
-              child: Padding(
-                padding: const EdgeInsets.all(8),
-                child: Row(
-                  children: [
-                    SizedBox(
-                      height: 64,
-                      width: 64,
-                      child: userProfile.profilePicture,
-                    ),
-                    SizedBox(width: 12),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          userProfile.name,
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black,
+            GestureDetector(
+              onTap: (){},
+              child: Card(
+                color: Colors.grey.shade100,
+                child: Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        height: 64,
+                        width: 64,
+                        child: userProfile.profilePicture,
+                      ),
+                      SizedBox(width: 12),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            userProfile.name,
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.black,
+                            ),
                           ),
-                        ),
-                        Text(
-                          userProfile.email,
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
+                          Text(
+                            userProfile.email,
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                    Spacer(),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(FontAwesomeIcons.chevronRight),
-                    ),
-                  ],
+                        ],
+                      ),
+                      Spacer(),
+                      Icon(FontAwesomeIcons.chevronRight),
+                    ],
+                  ),
                 ),
               ),
             ),

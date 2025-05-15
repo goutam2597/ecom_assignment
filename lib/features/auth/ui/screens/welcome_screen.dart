@@ -24,13 +24,13 @@ class WelcomeScreen extends StatelessWidget {
                 Text(
                   'Welcome to your ultimate\nshopping experience!',
                   textAlign: TextAlign.center,
-                  style: textTheme.headlineMedium,
+                  style: textTheme.headlineMedium!.copyWith(fontWeight: FontWeight.w600,fontSize: 26),
                 ),
                 const SizedBox(height: 16),
                 Text(
                   'Your stylish, smart shopping companion—made\nfor everyone, everywhere 🛍️',
                   textAlign: TextAlign.center,
-                  style: textTheme.bodyLarge,
+                  style: textTheme.bodyLarge!.copyWith(fontSize: 14),
                 ),
                 const SizedBox(height: 24),
                 Image.asset(AssetsPath.wFrame, width: double.infinity),

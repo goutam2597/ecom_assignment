@@ -1,7 +1,8 @@
 import 'package:ecommerce_assignment/features/home/ui/widgets/product_list_widget.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../app/assets_path.dart';
+import '../../data/product_services.dart';
+
 
 class PopularProductsScreen extends StatefulWidget {
   const PopularProductsScreen({super.key});
@@ -13,23 +14,8 @@ class PopularProductsScreen extends StatefulWidget {
 class _PopularProductsScreenState extends State<PopularProductsScreen> {
   @override
   Widget build(BuildContext context) {
-    final List<Product> products = [
-      Product(image: AssetsPath.shoeImage, name: 'Nike Air Max', price: 40),
-      Product(image: AssetsPath.watchImage, name: 'Rolex Watch', price: 35),
-      Product(image: AssetsPath.tvImage, name: 'Samsung Smart TV', price: 50),
-      Product(image: AssetsPath.shoeImage, name: 'Reebok Zig', price: 38),
-      Product(image: AssetsPath.shoeImage, name: 'Reebok Zig', price: 38),
-      Product(image: AssetsPath.shoeImage, name: 'Reebok Zig', price: 38),
-      Product(image: AssetsPath.shoeImage, name: 'Reebok Zig', price: 38),
-      Product(image: AssetsPath.shoeImage, name: 'Reebok Zig', price: 38),
-      Product(image: AssetsPath.shoeImage, name: 'Reebok Zig', price: 38),
-      Product(image: AssetsPath.shoeImage, name: 'Reebok Zig', price: 38),
-      Product(image: AssetsPath.shoeImage, name: 'Reebok Zig', price: 38),
-      Product(image: AssetsPath.shoeImage, name: 'Reebok Zig', price: 38),
-      Product(image: AssetsPath.shoeImage, name: 'Reebok Zig', price: 38),
-      Product(image: AssetsPath.shoeImage, name: 'Reebok Zig', price: 38),
-      Product(image: AssetsPath.shoeImage, name: 'Reebok Zig', price: 38),
-    ];
+    final popular = ProductService.popularProducts;
+
     return Scaffold(
       appBar: AppBar(title: Text('Most Popular')),
       body: Padding(
@@ -40,9 +26,9 @@ class _PopularProductsScreenState extends State<PopularProductsScreen> {
             crossAxisSpacing: 1,
             childAspectRatio: 0.9,
           ),
-          itemCount: products.length,
+          itemCount: popular.length,
           itemBuilder: (context, index) {
-            return FittedBox(child: ProductListWidget(product: products[index]));
+            return FittedBox(child: ProductListWidget(product: popular[index]));
           },
         ),
       ),

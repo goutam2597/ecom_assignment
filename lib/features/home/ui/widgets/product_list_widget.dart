@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../../app/app_colors.dart';
+import '../../../products/data/product_services.dart';
 
 class ProductListWidget extends StatelessWidget {
   final Product product;
@@ -96,12 +97,4 @@ class ProductListWidget extends StatelessWidget {
       ),
     );
   }
-}
-
-class Product {
-  final String image;
-  final String name;
-  final double price;
-
-  Product({required this.image, required this.name, required this.price});
 }

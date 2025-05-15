@@ -2,10 +2,9 @@ import 'package:ecommerce_assignment/features/home/ui/widgets/search_bar_widget.
 import 'package:ecommerce_assignment/features/products/ui/screens/featured_products_screen.dart';
 import 'package:ecommerce_assignment/features/products/ui/screens/new_products_screen.dart';
 import 'package:ecommerce_assignment/features/products/ui/screens/popular_products_screen.dart';
-import 'package:ecommerce_assignment/features/profile/ui/screens/user_profile_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../app/assets_path.dart';
+import '../../../products/data/product_services.dart';
 import '../widgets/app_bar_user_profile_widget.dart';
 import '../widgets/carousel_slider_widget.dart';
 import '../widgets/home_screen_header_widget.dart';
@@ -18,13 +17,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-
-    final List<Product> products = [
-      Product(image: AssetsPath.shoeImage, name: 'Nike Air Max', price: 40),
-      Product(image: AssetsPath.watchImage, name: 'Rolex Watch', price: 35),
-      Product(image: AssetsPath.tvImage, name: 'Samsung Smart TV', price: 50),
-      Product(image: AssetsPath.shoeImage, name: 'Reebok Zig', price: 38),
-    ];
+    final featured = ProductService.featuredProducts;
+    final popular = ProductService.popularProducts;
+    final newProducts = ProductService.newProducts;
 
     return Scaffold(
       appBar: AppBar(
@@ -78,9 +73,9 @@ class HomeScreen extends StatelessWidget {
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
-                    return ProductListWidget(product: products[index]);
+                    return ProductListWidget(product: featured[index]);
                   },
-                  itemCount: products.length,
+                  itemCount: 5,
                 ),
               ),
               SizedBox(height: 16),
@@ -101,9 +96,9 @@ class HomeScreen extends StatelessWidget {
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
-                    return ProductListWidget(product: products[index]);
+                    return ProductListWidget(product: popular[index]);
                   },
-                  itemCount: products.length,
+                  itemCount: 5,
                 ),
               ),
               SizedBox(height: 16),
@@ -124,9 +119,9 @@ class HomeScreen extends StatelessWidget {
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
-                    return ProductListWidget(product: products[index]);
+                    return ProductListWidget(product: newProducts[index]);
                   },
-                  itemCount: products.length,
+                  itemCount: 5,
                 ),
               ),
             ],

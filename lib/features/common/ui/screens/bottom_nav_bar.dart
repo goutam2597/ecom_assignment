@@ -1,5 +1,6 @@
 import 'package:ecommerce_assignment/app/app_colors.dart';
 import 'package:ecommerce_assignment/features/home/ui/screens/home_screen.dart';
+import 'package:ecommerce_assignment/features/products/ui/screens/all_products_screen.dart';
 import 'package:ecommerce_assignment/features/profile/ui/screens/user_profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -28,7 +29,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     _navScreens = [
       HomeScreen(onProfileTap: () => _onItemTapped(3)),
       Center(child: Text('Search')),
-      Center(child: Text('Shop')),
+      AllProductsScreen(),
       UserProfileScreen(),
     ];
   }
@@ -55,7 +56,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.bagShopping),
+            icon: Icon(FontAwesomeIcons.shop),
             label: '',
           ),
           BottomNavigationBarItem(
